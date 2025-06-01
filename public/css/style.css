@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: url(../images/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(20px);
+  filter: grayscale(0.4);
+  padding-top: 30px;
+}
+.main {
+  background-color: rgba(195, 236, 191, 0.377);
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+  padding: 30px;
+  font-weight: bold;
+  border-radius: 30px;
+  text-align: center;
+  width: 1000px;
+  margin: auto;
+}
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  transform: translateX(50px);
+  margin-bottom: 40px;
+}
+h1 {
+  font-size: 60px;
+  text-align: center;
+}
+h2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form input {
+  width: 300px;
+  height: 35px;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  border: 3px solid black;
+  font-size: 20px;
+}
+form input:focus {
+  border: 3px solid white;
+}
+ul {
+  width: 700px;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(50px);
+  padding: 20px;
+  font-weight: bold;
+  transform: translateX(-40px);
+  border-radius: 20px;
+  margin: 40px auto 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 500px;
+  margin: 15px auto;
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.form_div {
+  display: flex;
+  gap: 4px;
+}
+.form_div form {
+  margin: 0;
+}
+button {
+  padding: 7px 20px;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+button:hover {
+  background-color: white;
+  color: black;
+}

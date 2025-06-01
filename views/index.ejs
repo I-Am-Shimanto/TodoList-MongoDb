@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="heading">
+        <h1>Todolist</h1>
+        <h2><%= todolist.length %></h2>
+      </div>
+      <form class="form" action="/todo" method="post">
+        <input type="text" name="todoitem" placeholder="enter your todo" />
+        <button>submit</button>
+      </form>
+      <ul>
+        <% for(todo of todolist) { %>
+        <li>
+          <%= todo.todoitem %>
+          <div class="form_div">
+            <form action="/todo/<%= todo._id %>/edit" method="get">
+              <button class="edit">edit</button>
+            </form>
+            <form action="/todo/<%= todo._id %>?_method=DELETE" method="post">
+              <button class="delete">Delete</button>
+            </form>
+          </div>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>

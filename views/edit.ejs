@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Todo</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-image: url(https://img.goodfon.com/wallpaper/nbig/7/a8/anime-anime-girls-dark-background-arch-linux-linux-anime-ani.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        -webkit-backdrop-filter: blur(50px);
+        backdrop-filter: blur(20px);
+        filter: grayscale(0.4);
+        padding-top: 30px;
+      }
+      .main {
+        background-color: rgba(195, 236, 191, 0.377);
+        -webkit-backdrop-filter: blur(50px);
+        backdrop-filter: blur(50px);
+        padding: 30px;
+        font-weight: bold;
+        border-radius: 30px;
+        text-align: center;
+        width: 1000px;
+        margin: auto;
+      }
+      h2 {
+        font-size: 60px;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: inline-block;
+      }
+      form input {
+        width: 300px;
+        height: 35px;
+        text-align: center;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: white;
+        border: 3px solid black;
+        font-size: 20px;
+      }
+      form input:focus {
+        border: 3px solid white;
+      }
+      ul {
+        width: 700px;
+        background-color: rgba(255, 255, 255, 0.4);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(50px);
+        padding: 20px;
+        font-weight: bold;
+        transform: translateX(-40px);
+        border-radius: 20px;
+        margin: 40px auto 0;
+      }
+
+      li {
+        width: 500px;
+        margin: 15px auto;
+        font-size: 30px;
+        font-weight: 600;
+        text-transform: capitalize;
+        list-style: none;
+      }
+      .form_div {
+        display: flex;
+        gap: 4px;
+      }
+      .form_div form {
+        margin: 0;
+      }
+      button {
+        padding: 7px 20px;
+        background-color: black;
+        color: white;
+        font-size: 16px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: ease-in-out 0.3s;
+      }
+      button:hover {
+        background-color: white;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h2>Edit Todo</h2>
+      <form
+        class="main_form"
+        action="/todo/<%= edittodo._id %>?_method=PUT"
+        method="post"
+      >
+        <input
+          type="text"
+          name="todoitem"
+          placeholder="Enter your update todo"
+          value="<%= edittodo.todoitem %>"
+        />
+        <button>submit</button>
+      </form>
+      <form action="/todo">
+        <button>Cancel</button>
+      </form>
+      <ul>
+        <% for(todo of todolist) { %>
+        <li><%= todo.todoitem %></li>
+        <% } %>
+      </ul>
+    </div>
+  </body>
+</html>
