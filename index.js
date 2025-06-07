@@ -31,7 +31,7 @@ app.post("/todo", (req, res) => {
   let newTodo = new Todo({
     todoitem: todoitem,
   });
-  newTodo.save().then((res) => console.log(res));
+  newTodo.save();
   res.redirect("/todo");
 });
 
