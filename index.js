@@ -17,7 +17,9 @@ main()
   .catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/todolist");
+  await mongoose.connect(
+    "mongodb+srv://shimanto:shimanto18@cluster0.1qiiknp.mongodb.net/todolist"
+  );
 }
 
 app.get("/todo", async (req, res) => {
